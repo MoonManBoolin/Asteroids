@@ -38,6 +38,11 @@ def main():
             if (i.collision(player) <= (i.radius + player.radius)):
                 print("Game over!")
                 return
+        for obj1 in asteroids:
+            for obj2 in shots:
+                if (obj1.collision(obj2) <= (obj1.radius + obj2.radius)):
+                    obj1.split()
+                    obj2.kill()
 
 if __name__ == "__main__":
     main()
